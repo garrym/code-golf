@@ -1,0 +1,42 @@
+Iphy
+The giphy-ascii hybrid
+
+Size: 4,203 bytes
+
+Features
+	Displays a static image in coloured ASCII
+	Works with animated gifs
+	Works with gifs, png, jpg
+	Does a giphy search if argument is not a file
+	Displays ASCII animated gifs
+	Handles both static and animated images seamlessly
+	Resizes the image maintaining aspec ratio
+	Resizes the console window to match the image size
+	Uses an algorithm to calculate the closest console colour to the image pixel, used for display
+	Small file size even though it's packed with features
+	I use interop to get a handle to the Console window to generate a gif from the ascii output
+	At the end of the first iteration of the gif, it writes it to disk for usage later (1.gif in the folder you run it in)
+
+Usage:
+	iphy.exe "fresh brew"
+		Performs a giphy search for the provided word, downloads the image and renders it in ASCII for your pleasure
+
+	iphy.exe "pumkpin.png"
+		Displays a local static image
+
+	iphy.exe "fresh brew" -s
+		Not only does it get the giphy image for you, generate the ASCII console output, but when it's done, it'll save the result gif into a file for you to view again and again at your pleasure!
+
+
+Optimisations
+	Generates a pixel map of the gif and keeps it in memory
+	Only changes pixels that have been modified between gif frames, so it's super fast.
+	This increases the performance dramatically from simply rewriting every pixel.
+	Only changes the 
+	Pre-caches all of the colour to console colour mappings so rendering is extremely fast
+
+Optimisations removed to make the code smaller
+	Where possible I've used reflection to access the Console, this allows me to jsut make calls to the console with A("MethodName",args) instead of Console.MethodName(args)
+	I've also tapped into Console properties as well using reflection, using B("PropertyName") rather than Console.PropertyName, both for setting and getting
+
+
