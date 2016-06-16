@@ -61,12 +61,6 @@
     <Content Include="Examples\1.original.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Examples\2.ascii.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Examples\2.original.gif">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Examples\3.ascii.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
